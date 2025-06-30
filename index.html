@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img src="images/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2 rounded-circle">
+      <!-- <a class="navbar-brand" href="#">MyPortfolio</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="container fade-in">
+      <img src="images/aldi.jpeg" alt="Profile Photo" class="header-img">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Designer | Developer | Creator</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="container fade-in">
+    <h2 class="section-title text-center">About Me</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Hello! I'm a passionate web developer with experience in HTML, CSS, JavaScript, and Bootstrap. I love
+          creating clean, user-friendly websites.</p>
+      </div>
+      <div class="col-md-6">
+        <p>With a background in design and coding, I aim to bring ideas to life with modern web technologies and a
+          creative approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Section -->
+  <section id="services" class="container fade-in">
+    <h2 class="section-title text-center">Services</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="images/web1.jpg" class="img-fluid mb-2 rounded-img" alt="Web Design">
+        <h4>Web Design</h4>
+        <p>Custom website design with user experience in mind.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/ui.jpg" class="img-fluid mb-2 rounded-img" alt="Development">
+        <h4>UI | UX </h4>
+        <p>Responsive, clean code using the latest tech stack.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/brand.jpg" class="img-fluid mb-2 rounded-img" alt="Branding">
+        <h4>Branding</h4>
+        <p>Visual identity development for digital and print.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container fade-in">
+    <h2 class="section-title text-center">Portfolio</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/portfolio_1.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 1">
+      </div>
+      <div class="col-md-4">
+        <img src="images/portfolio_2.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 2">
+      </div>
+      <div class="col-md-4">
+        <img src="images/portfolio_3.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 3">
+      </div>
+      <div class="col-md-4">
+        <img src="images/portfolio_4.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 4">
+      </div>
+      <div class="col-md-4">
+        <img src="images/portfolio_5.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 5">
+      </div>
+      <div class="col-md-4">
+        <img src="images/portfolio_6.png" class="img-fluid mb-3 rounded-img" alt="Portfolio 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container fade-in">
+    <h2 class="section-title text-center">Contact</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fade => appearOnScroll.observe(fade));
+  </script>
+</body>
+
+</html>
